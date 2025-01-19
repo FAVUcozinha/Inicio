@@ -61,7 +61,7 @@ header {
     align-items: center;
     gap: 10px;
     width: 100%;
-    max-width: 100%; /* Garantir que a largura do contêiner dos botões seja 100% */
+    max-width: 100%;
 }
 
 /* Botões */
@@ -70,13 +70,13 @@ header {
     color: #F4E6CB;
     padding: 15px 0;
     font-size: 20px;
-    font-family: 'Basic Choice', Arial, sans-serif; /* Fonte alterada aqui */
+    font-family: 'Basic Choice', Arial, sans-serif;
     text-decoration: none;
     border-radius: 25px;
     text-align: center;
     transition: background-color 0.3s;
-    width: 100%; /* Garantir que os botões ocupem toda a largura disponível */
-    max-width: 100%; /* Largura máxima 100% */
+    width: 100%;
+    max-width: 100%;
     margin: 0 20px;
     white-space: nowrap;
     box-sizing: border-box;
@@ -103,6 +103,14 @@ header {
     .slideshow-section {
         height: 30vh;
     }
+
+    /* Estilo para "favu.png" na versão mobile */
+    .favu-image {
+        width: calc(100% - 40px); /* Largura total menos margem de 20px de cada lado */
+        margin: 0 20px; /* Margem lateral de 20px */
+        display: block;
+        height: auto; /* Mantém a proporção da imagem */
+    }
 }
 
 /* Versão Web */
@@ -111,8 +119,8 @@ header {
         flex-direction: row;
         justify-content: space-between;
         gap: 20px;
-        width: 100%; /* Garantir que o contêiner ocupe toda a largura */
-        max-width: 100%; /* Garantir que a largura do contêiner dos botões seja 100% */
+        width: 100%;
+        max-width: 100%;
         margin: 0 auto;
     }
 
@@ -120,7 +128,7 @@ header {
         font-size: 30px;
         padding: 15px 20px;
         width: 100%;
-        max-width: 100%; /* Largura total do botão */
+        max-width: 100%;
         margin: 0;
         white-space: nowrap;
         height: auto;
@@ -128,16 +136,15 @@ header {
         border-radius: 25px;
     }
 
-    /* Ajuste para que os botões ocupem a largura correspondente ao arquivo "topo.png" */
     .buttons-section {
-        width: 100%; /* Faz com que a largura da seção dos botões corresponda à largura total */
-        max-width: 100%; /* Limita a largura da seção dos botões */
+        width: 100%;
+        max-width: 100%;
         margin: 0 auto;
     }
 
     .button {
         width: 100%;
-        max-width: 100%; /* Não ultrapassar a largura da imagem de topo */
+        max-width: 100%;
     }
 }
 
