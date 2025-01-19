@@ -75,9 +75,9 @@ header {
     border-radius: 25px;
     text-align: center;
     transition: background-color 0.3s;
-    width: 100%;
-    max-width: 100%;
-    margin: 0 20px;
+    width: calc(100% - 40px); /* Adiciona margem lateral */
+    max-width: 400px; /* Limita a largura */
+    margin: 0 auto 10px; /* Centraliza e adiciona margem inferior */
     white-space: nowrap;
     box-sizing: border-box;
     display: inline-block;
@@ -140,9 +140,9 @@ footer {
     .button {
         font-size: 30px;
         padding: 15px 20px;
-        width: 100%;
-        max-width: 100%;
-        margin: 0;
+        width: calc(100% - 40px); /* Adiciona margem lateral */
+        max-width: 400px;
+        margin: 0 auto;
         white-space: nowrap;
         height: auto;
         box-sizing: border-box;
@@ -197,7 +197,7 @@ footer {
     80% { transform: translateX(-1200%); }
     86.67% { transform: translateX(-1300%); }
     93.33% { transform: translateX(-1400%); }
-    100% { transform: translateX(-1500%); } /* Ajustado para o novo número de slides */
+    100% { transform: translateX(-1500%); }
 }
 
 @keyframes fadeInOut {
