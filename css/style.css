@@ -34,7 +34,7 @@ header {
 /* Conteúdo Principal */
 .main-content {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 2vh; /* Responsivo */
     flex-grow: 1;
 }
 
@@ -48,7 +48,7 @@ header {
 /* Seção dos Botões */
 .buttons-section {
     background-color: #F4E6CB;
-    padding: 15px 0;
+    padding: 2vh 0; /* Responsivo */
     text-align: center;
     display: flex;
     justify-content: center;
@@ -58,22 +58,22 @@ header {
 /* Botões */
 .buttons-container {
     display: flex;
-    flex-direction: column; /* Alinha os botões em coluna */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    width: calc(100% - 1cm); /* Largura total com 0,5 cm de distância das laterais */
-    margin: 0 auto; /* Centraliza os botões */
+    gap: 1vh; /* Responsivo */
+    width: calc(100% - 2vw); /* Responsivo */
+    margin: 0 auto;
 }
 
 .button {
     background-color: #7FB1C8;
     color: #F4E6CB;
-    padding: 15px 0;
-    font-size: 20px;
+    padding: 2vh 0; /* Responsivo */
+    font-size: 1.5rem; /* Responsivo */
     font-family: 'Basic Choice', Arial, sans-serif;
     text-decoration: none;
-    border-radius: 25px;
+    border-radius: 1.5rem;
     text-align: center;
     transition: background-color 0.3s;
     width: 100%;
@@ -86,28 +86,26 @@ header {
 /* Versão Mobile */
 @media (max-width: 768px) {
     .main-image {
-        width: 100%; /* A imagem ocupará toda a largura disponível, a mesma largura do "topo.png" */
+        width: 100%;
     }
 
     .buttons-section {
-        padding: 15px 0;
+        padding: 2vh 0;
     }
 
     .buttons-container {
-        gap: 10px;
-        padding-left: 0.5cm;  /* 0,5 cm de distância do lado esquerdo */
-        padding-right: 0.5cm; /* 0,5 cm de distância do lado direito */
-        width: calc(100% - 1cm); /* Limita a largura dos botões com base na distância */
+        gap: 1vh;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        width: calc(100% - 4vw);
     }
 
     .button {
-        font-size: 20px;
-        padding: 20px 0;
+        font-size: 1.25rem;
+        padding: 3vh 0;
         width: 100%;
-        max-width: 100%;
         height: auto;
-        box-sizing: border-box;
-        border-radius: 25px;
+        border-radius: 1.5rem;
     }
 
     .slideshow-section {
@@ -115,38 +113,64 @@ header {
     }
 }
 
-/* Versão Web */
+/* Versão Desktop */
 @media (min-width: 769px) {
+    body {
+        height: 100vh; /* Responsivo */
+        overflow-y: auto;
+    }
+
     .main-image {
         width: auto;
-        max-width: 100%; /* A imagem não será aumentada além de seu tamanho natural */
-        margin: 0 auto; /* Centraliza a imagem */
+        max-width: 90%; /* Responsivo */
+        margin: 0 auto;
     }
 
     .buttons-container {
         flex-direction: row;
         justify-content: space-between;
-        gap: 20px;
-        width: calc(100% - 1cm); /* Largura total com 0,5 cm de distância das laterais */
-        margin: 0 auto; /* Centraliza os botões */
+        gap: 2vw; /* Responsivo */
+        width: calc(100% - 4vw); /* Responsivo */
+        margin: 0 auto;
     }
 
     .button {
-        font-size: 30px;
-        padding: 15px 20px;
-        width: 100%;
-        max-width: 100%;
-        margin: 0;
-        white-space: nowrap;
-        height: auto;
-        box-sizing: border-box;
-        border-radius: 25px;
+        font-size: 2rem; /* Responsivo */
+        padding: 1.5vh 2vw; /* Responsivo */
+        width: auto;
+        max-width: 25vw; /* Responsivo */
+        border-radius: 1.5rem;
     }
 
     .buttons-section {
         width: 100%;
         max-width: 100%;
         margin: 0 auto;
+    }
+
+    .slideshow-section {
+        height: auto;
+    }
+
+    .slideshow .slide {
+        width: 30vw; /* Responsivo */
+        height: 30vw; /* Responsivo */
+    }
+
+    .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        margin: 0;
+    }
+
+    /* Alteração das imagens no desktop */
+    header .header-image {
+        content: url('../images/topodesktop.png'); /* Substitui "topo.png" por "topodesktop.png" */
+    }
+
+    footer .footer-image {
+        content: url('../images/rodadesktop.png'); /* Substitui "roda.png" por "rodadesktop.png" */
     }
 }
 
@@ -156,21 +180,21 @@ header {
     width: 100%;
     overflow: hidden;
     margin: 0;
-    height: 50vh;
+    height: 50vh; /* Responsivo */
 }
 
 .slideshow {
     display: flex;
     width: 100%;
     height: 100%;
-    animation: slideAnimation 112s infinite;
+    animation: slideAnimation 112s linear infinite; /* Animação contínua */
 }
 
 .slide {
     width: 100%;
     flex-shrink: 0;
     opacity: 0;
-    animation: fadeInOut 112s infinite;
+    animation: fadeInOut 112s linear infinite;
 }
 
 .slide img {
@@ -197,7 +221,7 @@ header {
     80% { transform: translateX(-1200%); }
     86.67% { transform: translateX(-1300%); }
     93.33% { transform: translateX(-1400%); }
-    100% { transform: translateX(-1500%); }
+    100% { transform: translateX(0); } /* Retorna para o primeiro slide */
 }
 
 @keyframes fadeInOut {
