@@ -1,17 +1,20 @@
-// Seleciona os slides
-const slides = document.querySelectorAll('.slide');
-const totalSlides = slides.length;
-let currentSlide = 0;
+document.addEventListener("DOMContentLoaded", function () {
+    const slides = document.querySelectorAll(".slide");
+    let currentSlide = 0;
+    const totalSlides = slides.length;
 
-// Função para avançar os slides
-function nextSlide() {
-    slides[currentSlide].style.opacity = 0; // Oculta o slide atual
-    currentSlide = (currentSlide + 1) % totalSlides; // Avança para o próximo slide (retorna ao primeiro após o último)
-    slides[currentSlide].style.opacity = 1; // Exibe o próximo slide
-}
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.style.opacity = i === index ? "1" : "0";
+        });
+    }
 
-// Inicia o slideshow com uma transição a cada 5 segundos
-setInterval(nextSlide, 5000);
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        showSlide(currentSlide);
+    }
 
-// Inicializa o primeiro slide como visível
-slides[currentSlide].style.opacity = 1;
+    // Inicia o slideshow
+    showSlide(currentSlide);
+    setInterval(nextSlide, 5000);
+});

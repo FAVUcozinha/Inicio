@@ -15,6 +15,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background-image: url('../images/fundo site.png'); /* Caminho para a imagem de fundo */
+    background-size: cover;
+    background-position: center;
 }
 
 /* Cabeçalho */
@@ -36,6 +39,7 @@ header {
     text-align: center;
     margin-top: 2vh; /* Responsivo */
     flex-grow: 1;
+    background-image: none; /* Remove a imagem de fundo entre logo e cabeçalho */
 }
 
 .main-image {
@@ -58,11 +62,12 @@ header {
 /* Botões */
 .buttons-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Alteração para empilhar os botões */
     justify-content: center;
     align-items: center;
     gap: 1vh; /* Responsivo */
-    width: calc(100% - 2vw); /* Responsivo */
+    width: 100%;
+    max-width: 90%; /* Responsivo para não ultrapassar a largura da tela */
     margin: 0 auto;
 }
 
@@ -116,29 +121,35 @@ header {
 /* Versão Desktop */
 @media (min-width: 769px) {
     body {
-        height: 100vh; /* Responsivo */
+        height: 100vh;
         overflow-y: auto;
+        width: 40%; /* Largura ajustada */
+        margin: 0 auto;
+        border: 1px solid rgba(0, 0, 0, 0.1); /* Contorno sutil */
+        border-radius: 8px; /* Bordas arredondadas */
     }
 
     .main-image {
         width: auto;
-        max-width: 90%; /* Responsivo */
+        max-width: 90%;
         margin: 0 auto;
     }
 
     .buttons-container {
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 2vw; /* Responsivo */
-        width: calc(100% - 4vw); /* Responsivo */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5vh;
+        width: 100%;
+        max-width: 90%;
         margin: 0 auto;
     }
 
     .button {
-        font-size: 2rem; /* Responsivo */
-        padding: 1.5vh 2vw; /* Responsivo */
-        width: auto;
-        max-width: 25vw; /* Responsivo */
+        font-size: 2rem;
+        padding: 1.5vh 2vw;
+        width: 100%;
+        max-width: 100%;
         border-radius: 1.5rem;
     }
 
@@ -153,8 +164,8 @@ header {
     }
 
     .slideshow .slide {
-        width: 30vw; /* Responsivo */
-        height: 30vw; /* Responsivo */
+        width: 30vw;
+        height: 30vw;
     }
 
     .slide img {
@@ -166,11 +177,11 @@ header {
 
     /* Alteração das imagens no desktop */
     header .header-image {
-        content: url('../images/topodesktop.png'); /* Substitui "topo.png" por "topodesktop.png" */
+        content: url('../images/topodesktop.png');
     }
 
     footer .footer-image {
-        content: url('../images/rodadesktop.png'); /* Substitui "roda.png" por "rodadesktop.png" */
+        content: url('../images/rodadesktop.png');
     }
 }
 
@@ -244,4 +255,10 @@ footer {
     object-fit: cover;
     margin: 0;
     padding: 0;
+}
+
+/* Logo e fundo do campo específico */
+.main-content {
+    background-color: #E09F41; /* Cor de fundo para a área com logo */
+    background-image: none; /* Remove a imagem de fundo */
 }
